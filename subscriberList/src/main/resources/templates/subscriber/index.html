@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Well Hello!</title>
 </head>
 <body>
-
+<h1> Welcome! Please Enjoy our site!</h1>
+<h4> Don't forget to subscribe to our email List!</h4>
+<p>Please use the form below to sign up as a subscriber:</p>
+<form action="#" th:action="@{/}" th:object="${subscriber}" method="post">
+    <table>
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" th:field="*{firstName}" /></td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" th:field="*{lastName}" /></td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td><input type="text" th:field="*{userName}" /></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit Your Name</button></td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
